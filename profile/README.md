@@ -7,6 +7,11 @@
   A schema-enforced module standard for software that agents are allowed to operate.</p>
 
   <p>
+    <strong>English</strong> ·
+    <a href="https://github.com/aiperceivable/.github/blob/main/profile/README-zh.md">中文</a>
+  </p>
+
+  <p>
     <a href="https://apcore.aiperceivable.com/">Documentation</a> ·
     <a href="https://apcore.aiperceivable.com/getting-started/">Getting Started</a> ·
     <a href="https://github.com/aiperceivable/apcore/blob/main/PROTOCOL_SPEC.md">Protocol Spec</a> ·
