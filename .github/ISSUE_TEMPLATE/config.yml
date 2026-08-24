@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or design discussion
+    url: https://github.com/aiperceivable/apcore/discussions
+    about: Open-ended questions, spec proposals, and roadmap discussion happen here.
+  - name: Documentation
+    url: https://apcore.aiperceivable.com/
+    about: Concepts, guides, and reference for the apcore standard and its SDKs.
+  - name: Report a security vulnerability
+    url: https://github.com/aiperceivable/.github/blob/main/SECURITY.md
+    about: Never file security issues publicly — use private reporting.

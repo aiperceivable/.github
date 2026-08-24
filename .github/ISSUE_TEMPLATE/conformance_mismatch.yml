@@ -1,0 +1,61 @@
+name: Conformance mismatch
+description: Two or more language implementations behave differently for the same input
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These are the most valuable bug reports in this project.
+
+        The SDKs share no code — they are independent implementations held together by
+        [conformance fixtures](https://github.com/aiperceivable/apcore/tree/main/conformance).
+        A divergence means either an implementation is wrong, or the specification is
+        ambiguous enough that two people read it differently. Both are worth fixing.
+
+        **File this against [apcore](https://github.com/aiperceivable/apcore)** (or the
+        relevant surface spec: `apcore-mcp`, `apcore-a2a`, `apcore-cli`) rather than against
+        one implementation — the decision about which behavior is correct belongs to the spec.
+
+  - type: input
+    id: languages
+    attributes:
+      label: Which implementations disagree?
+      placeholder: "e.g. apcore-python 0.18.2 vs apcore-rust 0.6.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: input
+    attributes:
+      label: The same input, given to both
+      description: Module definition, arguments, identity, and configuration.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: outputs
+    attributes:
+      label: What each one produced
+      description: Include exact error codes and messages — string-level differences matter here.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: authority
+    attributes:
+      label: What should be correct, and why
+      description: |
+        If a conformance fixture or a line in the protocol spec settles it, cite it.
+        If nothing does, say so — an unspecified case is itself the finding.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Have you checked the other implementations?
+      options:
+        - label: I checked whether the third language also diverges
+          required: false

@@ -1,0 +1,50 @@
+name: Feature request
+description: Propose new behavior or capability
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals that describe a **problem** get further than proposals that describe a
+        solution — the maintainers may know a cheaper way to solve it.
+
+        Anything that changes protocol behavior needs an issue before a PR, so the
+        cross-language cost is visible while the design is still cheap to change.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you solving?
+      description: What are you trying to do today, and where does it break down?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: What should happen instead. A sketch is fine.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Does this change protocol behavior?
+      description: |
+        Protocol changes must land in all three SDKs and usually need new conformance
+        fixtures. Implementation-only changes do not.
+      options:
+        - "No — implementation or ergonomics only"
+        - "Yes — it changes what a compliant implementation must do"
+        - "Not sure"
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Including what happens if nothing changes.
+    validations:
+      required: false

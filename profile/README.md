@@ -4,7 +4,7 @@
   <h1>AI-Perceivable</h1>
 
   <p><strong>Build once, invoke by code or AI.</strong><br/>
-  A schema-enforced module standard for software that agents are allowed to operate.</p>
+  A protocol-neutral runtime that keeps schema validation, ACL, approval, and execution evidence consistent across agent and code surfaces.</p>
 
   <p>
     <strong>English</strong> ·
@@ -53,7 +53,46 @@ Those questions do not belong inside the model's reasoning loop. They belong at 
                   └──────────────────────────────────────────┘
 ```
 
+Three steps, and only the first one touches your code:
+
+1. **Bind** — a decorator, or a YAML binding file for code you cannot annotate
+2. **Expose** — the same registered module is projected through whichever adapters you enable
+3. **Execute under governance** — validation, identity, ACL, approval, and audit run before and after your logic, identically on every surface
+
 Define a governed capability once. Project it onto any surface. **The guarantees do not weaken when the transport changes.**
+
+---
+
+## How this relates to MCP
+
+This is the most common question, so it is worth answering directly: **apcore is not an alternative to MCP.** MCP defines client-server communication and tool metadata. apcore addresses a different boundary — defining and executing an application capability consistently *before* it is exposed through MCP or anything else.
+
+| Concern | MCP | apcore |
+|---|---|---|
+| **Primary role** | Client-server protocol and tool surface | Capability definition and governed execution runtime |
+| **Schema and hints** | Tool input/output schemas and annotations | Required schemas plus runtime-enforced validation |
+| **Access and approval** | Implemented by the server or deployment | ACL and approval gates enforced by the execution pipeline |
+| **Auditability** | Implemented by the server or deployment | Trace context, structured errors, events, usage hooks |
+| **Language model** | Protocol SDKs | Semantically aligned Python, TypeScript, and Rust SDKs |
+
+**Use MCP directly** when a protocol server is all you need. **Add apcore** when the same business capability must retain validation, access, approval, and audit semantics across MCP, A2A, CLI, HTTP, and direct code.
+
+The same logic applies upward: apcore is complementary to LangChain, LlamaIndex, CrewAI, and AutoGen rather than competing with them. Those frameworks orchestrate *calls between* capabilities; apcore standardizes what an individual capability **is** and what happens when one is invoked.
+
+> apcore solves **how to build modules** (a module standard), not how to call tools (a communication protocol).
+
+---
+
+## Why apcore
+
+| | |
+|---|---|
+| **Agent-readable** | Descriptions, input schemas, output schemas, and behavioral metadata give automated callers a structured contract. Model interpretation remains a caller responsibility. |
+| **Schema-driven** | Strict input/output contracts on every interface — predictable, validatable, self-documenting. |
+| **Governed execution** | Identity, ACL, approval gates, call-chain guards, middleware, and validation run before and after application logic. |
+| **Protocol-neutral** | Use the native SDK directly, or project registered modules through maintained MCP, A2A, CLI, and framework adapters. |
+| **Cross-language** | Maintained Python, TypeScript, and Rust SDKs implement one normative protocol and shared conformance fixtures, with language-idiomatic APIs. |
+| **Open source** | Apache-2.0. The protocol, SDKs, conformance fixtures, and governance documents are all public. |
 
 ---
 
@@ -66,6 +105,8 @@ cargo add apcore            # Rust
 ```
 
 New to the project? Read [**What is apcore?**](https://github.com/aiperceivable/apcore#what-is-apcore) first — it explains the module standard before any SDK detail.
+
+**Adopt incrementally.** Define and test one application operation in the native SDK. Add an MCP or CLI adapter only after its validation, ACL, approval, and evidence paths are clear. One governed capability is a better starting point than a full migration.
 
 ---
 
@@ -98,7 +139,7 @@ Scan the code you already have. No rewrite, no parallel definition to keep in sy
 
 | Repository | Ecosystem |
 |---|---|
-| [fastapi-apcore](https://github.com/aiperceivable/fastapi-apcore) · [django-apcore](https://github.com/aiperceivable/django-apcore) · [flask-apcore](https://github.com/aiperceivable/flask-apcore) · [pydantic-ai-apcore](https://github.com/aiperceivable/pydantic-ai-apcore) | Python |
+| [fastapi-apcore](https://github.com/aiperceivable/fastapi-apcore) · [django-apcore](https://github.com/aiperceivable/django-apcore) · [flask-apcore](https://github.com/aiperceivable/flask-apcore) | Python |
 | [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
 | [axum-apcore](https://github.com/aiperceivable/axum-apcore) | Rust |
 | [apcore-toolkit](https://github.com/aiperceivable/apcore-toolkit) ([py](https://github.com/aiperceivable/apcore-toolkit-python) · [ts](https://github.com/aiperceivable/apcore-toolkit-typescript) · [rs](https://github.com/aiperceivable/apcore-toolkit-rust)) | Shared scanner and schema-extraction logic behind all of the above |
@@ -122,11 +163,24 @@ Scan the code you already have. No rewrite, no parallel definition to keep in sy
 
 ---
 
+## Help build the standard
+
+apcore is open source and maintainer-led. The contributions that help most are the ones that strengthen conformance, the supported adoption path, or verified documentation.
+
+| | |
+|---|---|
+| **Implement an SDK** | Port apcore to a new language. [The conformance fixtures](https://github.com/aiperceivable/apcore/tree/main/conformance) are your spec — pass them and you have a compliant SDK. |
+| **Build an adapter** | Expose apcore modules over a new surface — a web framework, a protocol, a runtime. One guide, one registry to read from. |
+| **Pick a good first issue** | Small, scoped tasks across the SDKs and docs, labeled for newcomers and ready to claim. |
+| **Join the discussion** | Ask questions, propose spec changes, and shape the roadmap in the open. |
+
+---
+
 ## Contributing
 
 Every repository is **Apache-2.0**. The core project follows [OpenSSF Best Practices](https://www.bestpractices.dev/projects/12294).
 
-- [Contributing guide](https://github.com/aiperceivable/apcore/blob/main/CONTRIBUTING.md)
+- [Contributing guide](https://github.com/aiperceivable/apcore/blob/main/CONTRIBUTING.md) · [Code of Conduct](https://github.com/aiperceivable/.github/blob/main/CODE_OF_CONDUCT.md)
 - [Governance](https://github.com/aiperceivable/apcore/blob/main/GOVERNANCE.md) · [Scope](https://github.com/aiperceivable/apcore/blob/main/SCOPE.md) · [Roadmap](https://github.com/aiperceivable/apcore/blob/main/ROADMAP.md)
 - [Security policy](https://github.com/aiperceivable/apcore/blob/main/SECURITY.md)
 

@@ -1,0 +1,68 @@
+name: Bug report
+description: Something behaves differently from what the documentation or specification says
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing this.
+
+        **Two languages disagreeing on the same input?** Use the *Conformance mismatch*
+        template instead — it routes to the specification rather than to one implementation.
+
+        **Security issue?** Do not file it here. See
+        [SECURITY.md](https://github.com/aiperceivable/.github/blob/main/SECURITY.md).
+
+        Not sure this is the right repository? File it anyway and say so — a maintainer will
+        move it. See the [routing table](https://github.com/aiperceivable/.github/blob/main/CONTRIBUTING.md#first-which-repository).
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Package version, or commit SHA if building from source.
+      placeholder: "e.g. apcore 0.18.2 / commit c5cb37b"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Which surface were you calling through?
+      description: The same module can behave differently depending on how it is reached.
+      options:
+        - Native SDK (direct call)
+        - MCP
+        - A2A
+        - CLI
+        - HTTP / framework integration
+        - Not applicable
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Smallest module definition and call that shows the problem.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+      description: |
+        What did you expect, what happened instead, and what told you to expect it —
+        documentation, the protocol spec, or a conformance fixture.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Environment
+      description: Language runtime version, OS, and anything else that might matter.
+    validations:
+      required: false
