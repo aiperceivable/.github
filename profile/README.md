@@ -140,9 +140,11 @@ Scan the code you already have. No rewrite, no parallel definition to keep in sy
 | Repository | Ecosystem |
 |---|---|
 | [fastapi-apcore](https://github.com/aiperceivable/fastapi-apcore) · [django-apcore](https://github.com/aiperceivable/django-apcore) · [flask-apcore](https://github.com/aiperceivable/flask-apcore) | Python |
-| [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
+| [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [hono-apcore](https://github.com/aiperceivable/hono-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
 | [axum-apcore](https://github.com/aiperceivable/axum-apcore) | Rust |
 | [apcore-toolkit](https://github.com/aiperceivable/apcore-toolkit) ([py](https://github.com/aiperceivable/apcore-toolkit-python) · [ts](https://github.com/aiperceivable/apcore-toolkit-typescript) · [rs](https://github.com/aiperceivable/apcore-toolkit-rust)) | Shared scanner and schema-extraction logic behind all of the above |
+
+**Agent frameworks** — [pydantic-ai-apcore](https://github.com/aiperceivable/pydantic-ai-apcore) works in both directions: it hands governed apcore modules to a [pydantic-ai](https://ai.pydantic.dev/) agent as an `AbstractToolset`, and registers the tools that agent already has as apcore modules — so they gain schema validation, ACL, approval gates, and audit, and can then be served over MCP, CLI, or A2A without a rewrite.
 
 ### Beyond the framework
 

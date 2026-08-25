@@ -140,9 +140,11 @@ cargo add apcore            # Rust
 | 仓库 | 生态 |
 |---|---|
 | [fastapi-apcore](https://github.com/aiperceivable/fastapi-apcore) · [django-apcore](https://github.com/aiperceivable/django-apcore) · [flask-apcore](https://github.com/aiperceivable/flask-apcore) | Python |
-| [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
+| [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [hono-apcore](https://github.com/aiperceivable/hono-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
 | [axum-apcore](https://github.com/aiperceivable/axum-apcore) | Rust |
 | [apcore-toolkit](https://github.com/aiperceivable/apcore-toolkit) ([py](https://github.com/aiperceivable/apcore-toolkit-python) · [ts](https://github.com/aiperceivable/apcore-toolkit-typescript) · [rs](https://github.com/aiperceivable/apcore-toolkit-rust)) | 支撑以上全部集成的共享扫描与 schema 提取逻辑 |
+
+**Agent 框架** —— [pydantic-ai-apcore](https://github.com/aiperceivable/pydantic-ai-apcore) 双向可用：既把受治理的 apcore 模块以 `AbstractToolset` 的形式交给 [pydantic-ai](https://ai.pydantic.dev/) agent，也把该 agent 已经拥有的工具注册为 apcore 模块 —— 于是它们获得 schema 校验、ACL、审批门与审计，并可以不经重写就通过 MCP、CLI 或 A2A 对外提供。
 
 ### 框架之外
 
