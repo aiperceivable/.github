@@ -123,15 +123,16 @@ cargo add apcore            # Rust
 | [apcore-typescript](https://github.com/aiperceivable/apcore-typescript) | TypeScript SDK —— `npm install apcore-js` |
 | [apcore-rust](https://github.com/aiperceivable/apcore-rust) | Rust SDK —— `cargo add apcore` |
 
-### 表面适配器
+### Toolkit 与协议适配
 
-同一个模块，投射到不同协议之上。每个表面只规范一次，实现三次。
+[**apcore-surfaces**](https://github.com/aiperceivable/apcore-surfaces) 维护 Toolkit、MCP、A2A 和 CLI。每个组件的三种语言实现共用一套文档和 conformance 测试夹具。
 
-| 表面 | 规范 | Python | TypeScript | Rust |
+| 组件 | 文档 | Python | TypeScript | Rust |
 |---|---|---|---|---|
-| **MCP** | [apcore-mcp](https://github.com/aiperceivable/apcore-mcp) | [python](https://github.com/aiperceivable/apcore-mcp-python) | [typescript](https://github.com/aiperceivable/apcore-mcp-typescript) | [rust](https://github.com/aiperceivable/apcore-mcp-rust) |
-| **A2A** | [apcore-a2a](https://github.com/aiperceivable/apcore-a2a) | [python](https://github.com/aiperceivable/apcore-a2a-python) | [typescript](https://github.com/aiperceivable/apcore-a2a-typescript) | [rust](https://github.com/aiperceivable/apcore-a2a-rust) |
-| **CLI** | [apcore-cli](https://github.com/aiperceivable/apcore-cli) | [python](https://github.com/aiperceivable/apcore-cli-python) | [typescript](https://github.com/aiperceivable/apcore-cli-typescript) | [rust](https://github.com/aiperceivable/apcore-cli-rust) |
+| **Toolkit** | [Toolkit](https://aiperceivable.github.io/apcore-surfaces/toolkit/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/toolkit/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/toolkit/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/toolkit/rust) |
+| **MCP** | [MCP](https://aiperceivable.github.io/apcore-surfaces/mcp/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/mcp/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/mcp/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/mcp/rust) |
+| **A2A** | [A2A](https://aiperceivable.github.io/apcore-surfaces/a2a/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/a2a/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/a2a/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/a2a/rust) |
+| **CLI** | [CLI](https://aiperceivable.github.io/apcore-surfaces/cli/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/cli/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/cli/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/cli/rust) |
 
 ### 框架集成
 
@@ -142,7 +143,6 @@ cargo add apcore            # Rust
 | [fastapi-apcore](https://github.com/aiperceivable/fastapi-apcore) · [django-apcore](https://github.com/aiperceivable/django-apcore) · [flask-apcore](https://github.com/aiperceivable/flask-apcore) | Python |
 | [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [hono-apcore](https://github.com/aiperceivable/hono-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
 | [axum-apcore](https://github.com/aiperceivable/axum-apcore) | Rust |
-| [apcore-toolkit](https://github.com/aiperceivable/apcore-toolkit) ([py](https://github.com/aiperceivable/apcore-toolkit-python) · [ts](https://github.com/aiperceivable/apcore-toolkit-typescript) · [rs](https://github.com/aiperceivable/apcore-toolkit-rust)) | 支撑以上全部集成的共享扫描与 schema 提取逻辑 |
 
 **Agent 框架** —— [pydantic-ai-apcore](https://github.com/aiperceivable/pydantic-ai-apcore) 双向可用：既把受治理的 apcore 模块以 `AbstractToolset` 的形式交给 [pydantic-ai](https://ai.pydantic.dev/) agent，也把该 agent 已经拥有的工具注册为 apcore 模块 —— 于是它们获得 schema 校验、ACL、审批门与审计，并可以不经重写就通过 MCP、CLI 或 A2A 对外提供。
 

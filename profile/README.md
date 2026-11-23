@@ -123,15 +123,16 @@ New to the project? Read [**What is apcore?**](https://github.com/aiperceivable/
 | [apcore-typescript](https://github.com/aiperceivable/apcore-typescript) | TypeScript SDK — `npm install apcore-js` |
 | [apcore-rust](https://github.com/aiperceivable/apcore-rust) | Rust SDK — `cargo add apcore` |
 
-### Surface adapters
+### Toolkit and surfaces
 
-One module, projected onto a different protocol. Each surface is specified once and implemented three times.
+[**apcore-surfaces**](https://github.com/aiperceivable/apcore-surfaces) hosts Toolkit, MCP, A2A, and CLI. Each component shares documentation and conformance fixtures across its three implementations.
 
-| Surface | Specification | Python | TypeScript | Rust |
+| Component | Documentation | Python | TypeScript | Rust |
 |---|---|---|---|---|
-| **MCP** | [apcore-mcp](https://github.com/aiperceivable/apcore-mcp) | [python](https://github.com/aiperceivable/apcore-mcp-python) | [typescript](https://github.com/aiperceivable/apcore-mcp-typescript) | [rust](https://github.com/aiperceivable/apcore-mcp-rust) |
-| **A2A** | [apcore-a2a](https://github.com/aiperceivable/apcore-a2a) | [python](https://github.com/aiperceivable/apcore-a2a-python) | [typescript](https://github.com/aiperceivable/apcore-a2a-typescript) | [rust](https://github.com/aiperceivable/apcore-a2a-rust) |
-| **CLI** | [apcore-cli](https://github.com/aiperceivable/apcore-cli) | [python](https://github.com/aiperceivable/apcore-cli-python) | [typescript](https://github.com/aiperceivable/apcore-cli-typescript) | [rust](https://github.com/aiperceivable/apcore-cli-rust) |
+| **Toolkit** | [Toolkit](https://aiperceivable.github.io/apcore-surfaces/toolkit/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/toolkit/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/toolkit/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/toolkit/rust) |
+| **MCP** | [MCP](https://aiperceivable.github.io/apcore-surfaces/mcp/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/mcp/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/mcp/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/mcp/rust) |
+| **A2A** | [A2A](https://aiperceivable.github.io/apcore-surfaces/a2a/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/a2a/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/a2a/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/a2a/rust) |
+| **CLI** | [CLI](https://aiperceivable.github.io/apcore-surfaces/cli/) | [python](https://github.com/aiperceivable/apcore-surfaces/tree/main/cli/python) | [typescript](https://github.com/aiperceivable/apcore-surfaces/tree/main/cli/typescript) | [rust](https://github.com/aiperceivable/apcore-surfaces/tree/main/cli/rust) |
 
 ### Framework integrations
 
@@ -142,7 +143,6 @@ Scan the code you already have. No rewrite, no parallel definition to keep in sy
 | [fastapi-apcore](https://github.com/aiperceivable/fastapi-apcore) · [django-apcore](https://github.com/aiperceivable/django-apcore) · [flask-apcore](https://github.com/aiperceivable/flask-apcore) | Python |
 | [nestjs-apcore](https://github.com/aiperceivable/nestjs-apcore) · [hono-apcore](https://github.com/aiperceivable/hono-apcore) · [tiptap-apcore](https://github.com/aiperceivable/tiptap-apcore) | TypeScript |
 | [axum-apcore](https://github.com/aiperceivable/axum-apcore) | Rust |
-| [apcore-toolkit](https://github.com/aiperceivable/apcore-toolkit) ([py](https://github.com/aiperceivable/apcore-toolkit-python) · [ts](https://github.com/aiperceivable/apcore-toolkit-typescript) · [rs](https://github.com/aiperceivable/apcore-toolkit-rust)) | Shared scanner and schema-extraction logic behind all of the above |
 
 **Agent frameworks** — [pydantic-ai-apcore](https://github.com/aiperceivable/pydantic-ai-apcore) works in both directions: it hands governed apcore modules to a [pydantic-ai](https://ai.pydantic.dev/) agent as an `AbstractToolset`, and registers the tools that agent already has as apcore modules — so they gain schema validation, ACL, approval gates, and audit, and can then be served over MCP, CLI, or A2A without a rewrite.
 
