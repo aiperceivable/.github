@@ -112,16 +112,15 @@ New to the project? Read [**What is apcore?**](https://github.com/aiperceivable/
 
 ## Repository map
 
-### Core standard
+### Core SDKs
 
-`apcore` is a **protocol specification**. Each language is an independent implementation, kept honest by a shared cross-language conformance suite rather than by shared code.
+[**apcore**](https://github.com/aiperceivable/apcore) hosts the protocol specification, schemas, documentation, and shared conformance fixtures. The three SDKs share the protocol contract and publish independently.
 
-| Repository | Role |
+| SDK | Install |
 |---|---|
-| [**apcore**](https://github.com/aiperceivable/apcore) | Specification, schemas, conformance fixtures, documentation |
-| [apcore-python](https://github.com/aiperceivable/apcore-python) | Python SDK — `pip install apcore` |
-| [apcore-typescript](https://github.com/aiperceivable/apcore-typescript) | TypeScript SDK — `npm install apcore-js` |
-| [apcore-rust](https://github.com/aiperceivable/apcore-rust) | Rust SDK — `cargo add apcore` |
+| [Python](https://github.com/aiperceivable/apcore/tree/main/python) | `pip install apcore` |
+| [TypeScript](https://github.com/aiperceivable/apcore/tree/main/typescript) | `npm install apcore-js` |
+| [Rust](https://github.com/aiperceivable/apcore/tree/main/rust) | `cargo add apcore` |
 
 ### Toolkit and surfaces
 

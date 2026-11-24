@@ -112,16 +112,15 @@ cargo add apcore            # Rust
 
 ## 仓库地图
 
-### 核心标准
+### 核心 SDK
 
-`apcore` 是一份**协议规范**。每种语言都是独立实现，把它们约束在一起的是一套共享的跨语言 conformance 套件，而不是共享代码。
+[**apcore**](https://github.com/aiperceivable/apcore) 维护协议规范、schema、文档和共享的 conformance 测试夹具。三种语言遵循同一协议，各自独立发布。
 
-| 仓库 | 职责 |
+| SDK | 安装 |
 |---|---|
-| [**apcore**](https://github.com/aiperceivable/apcore) | 规范、schema、conformance 测试夹具、文档 |
-| [apcore-python](https://github.com/aiperceivable/apcore-python) | Python SDK —— `pip install apcore` |
-| [apcore-typescript](https://github.com/aiperceivable/apcore-typescript) | TypeScript SDK —— `npm install apcore-js` |
-| [apcore-rust](https://github.com/aiperceivable/apcore-rust) | Rust SDK —— `cargo add apcore` |
+| [Python](https://github.com/aiperceivable/apcore/tree/main/python) | `pip install apcore` |
+| [TypeScript](https://github.com/aiperceivable/apcore/tree/main/typescript) | `npm install apcore-js` |
+| [Rust](https://github.com/aiperceivable/apcore/tree/main/rust) | `cargo add apcore` |
 
 ### Toolkit 与协议适配
 
